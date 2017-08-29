@@ -1,0 +1,268 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>甘河工业园区有毒有害气体排放虚拟地理环境展示系统</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/PositionPick.js"></script>
+    <script src="assets/js/settingFunc.js"></script>
+    <!-- <script src="assets/js/roamManager.js"></script> -->
+    <!-- <script src="assets/js/roam.js"></script> -->
+
+
+    <script src="assets/js/app.js" content="webkit"></script>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="assets/css/admin.css"/>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("sidePanel").style.width = "300px";
+        }
+
+        function closeNav() {
+            document.getElementById("sidePanel").style.width = "0";
+        }
+    </script>
+
+    <script src="CesiumSource/Build/Cesium/Cesium.js"></script>
+    <style>
+        @import url(CesiumSource/Build/Cesium/Widgets/widgets.css);
+        html, body, #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+
+    <style type="text/css">
+        #sideBar {
+            font-family: Arial, sans-serif;
+            top: 0;
+            right: 0;
+            hight: 80px;
+            width: 80px;
+            position: absolute;
+            z-index: 2;
+        }
+
+        #sidePanel {
+            height: 100%; /* 100% Full-height */
+            width: 0px; /* 0 width - change this with JavaScript */
+            position: absolute; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: #fff;
+            overflow-x: hidden; /* Disable horizontal scroll */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            opacity: 0.7;
+        }
+
+        #sidePanel a {
+            padding: 0px 0px 0px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        #sidePanel .closebtn {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-size: 36px;
+        }
+
+    </style>
+    <!--[if lte IE 9]><p class="browsehappy">升级你的浏览器吧！ <a href="http://www.firefox.com.cn" target="_blank">升级浏览器</a>以获得更好的体验！
+</p><![endif]-->
+</head>
+
+<body onload="position();settingFunc();">
+<!-- roam(); -->
+<!-- <header class="am-topbar admin-header"> -->
+<div class="am-cf admin-main">
+
+    <div class="admin-content">
+        <div class="admin">
+            <div id="cesiumContainer">
+    <div class="am-topbar-brand">
+        <h3><a href="#">甘河工业园区有毒有害气体排放虚拟地理环境展示系统</a></h3>
+    </div>
+
+    <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+        <ul class="am-nav am-nav-pills am-topbar-nav admin-header-list">
+
+            <!--  <li class="kuanjie" style="vertical-align:middle;">
+                <a href="#" class="am-icon-gear"> 系统设置</a>
+             </li> -->
+            <li class="kuanjie" style="vertical-align:middle;">
+                <a href="#" id="sideBar" style="font-size:15px;cursor:pointer" onclick="openNav()">场景树</a>
+            </li>
+            <li class="am-hide-sm-only" style="float: right;">
+                <a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span>
+                    <span class="admin-fullText">开启全屏</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+<!-- </header> -->
+
+
+                <div id="geoPosition" style="z-index:10; position:absolute; bottom:2%; left:35%; visibility:visible;">
+                    <label style="color:#fff; font-size:20px; font-family:SimHei;">经度：</label><input type="text" id="longitude" style="width:130px; border:none; font-family:SimHei; background-color:transparent; color:#fff; font-size:1.2em" readonly>
+                    <label style="color:#fff; font-size:20px; font-family:SimHei;">纬度：</label><input type="text" id="latitude" style="width:130px; border:none; font-family:SimHei; background-color:transparent; color:#fff; font-size:1.2em" readonly>
+                    <label style="color:#fff; font-size:20px; font-family:SimHei;">视野高度：</label><input type="text" id="height" style="width:130px; border:none; font-family:SimHei; background-color:transparent; color:#fff; font-size:1.2em" readonly>
+                </div>
+            </div>
+            <div id="sidePanel" class="sideB">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var imageryProvider = new Cesium.createTileMapServiceImageryProvider({
+            url: "http://localhost:8000",
+            fileExtension: "jpg"
+        });
+        var terrainProvider = new Cesium.CesiumTerrainProvider({
+           url: 'http://localhost:8001'
+        });
+        var extent = Cesium.Rectangle.fromDegrees(101.418675, 36.645383,101.620573, 36.437018);
+        Cesium.Camera.DEFAULT_VIEW_RECTANGLE = extent;
+        Cesium.Camera.DEFAULT_VIEW_FACTOR = 0;
+        var viewer = new Cesium.Viewer('cesiumContainer', {
+            imageryProvider: imageryProvider,
+            // terrainProvider: terrainProvider,
+            baseLayerPicker: false,
+            geocoder: false
+        });
+        viewer.dataSources.add(Cesium.GeoJsonDataSource.load('http://localhost:8000/geoJSON.json'));
+        var scene = viewer.scene;
+        viewer.infoBox.frame.sandbox = "allow-same-origin allow-top-navigation allow-pointer-lock allow-popups allow-forms allow-scripts";
+        var wyoming = viewer.entities.add({
+            name: 'Wyoming',
+            polygon: {
+                hierarchy: Cesium.Cartesian3.fromDegreesArray([
+                    -109.080842, 45.002073,
+                    -105.91517, 45.002073,
+                    -104.058488, 44.996596,
+                    -104.053011, 43.002989,
+                    -104.053011, 41.003906,
+                    -105.728954, 40.998429,
+                    -107.919731, 41.003906,
+                    -109.04798, 40.998429,
+                    -111.047063, 40.998429,
+                    -111.047063, 42.000709,
+                    -111.047063, 44.476286,
+                    -111.05254, 45.002073
+                ]),
+                height: 0,
+                material: Cesium.Color.RED.withAlpha(0.5),
+                outline: true,
+                outlineColor: Cesium.Color.BLACK
+            }
+        });
+        wyoming.polygon.height = 200000;
+        wyoming.polygon.extrudedHeight = 250000;
+        wyoming.description = '\
+    <img\
+      width="50%"\
+      style="float:left; margin: 0 1em 1em 0;"\
+      src="http://cesiumjs.org/images/2015/02-02/Flag_of_Wyoming.svg"/>\
+    <p>\
+      Wyoming is a state in the mountain region of the Western \
+      United States.\
+    </p>\
+    <p>\
+      Wyoming is the 10th most extensive, but the least populous \
+      and the second least densely populated of the 50 United \
+      States. The western two thirds of the state is covered mostly \
+      with the mountain ranges and rangelands in the foothills of \
+      the eastern Rocky Mountains, while the eastern third of the \
+      state is high elevation prairie known as the High Plains. \
+      Cheyenne is the capital and the most populous city in Wyoming, \
+      with a population estimate of 62,448 in 2013.\
+    </p>\
+    <p>\
+      Source: \
+      <a style="color: WHITE"\
+        target="_blank"\
+        href="http://en.wikipedia.org/wiki/Wyoming">Wikpedia</a>\
+    </p>';
+        var ganhe = viewer.entities.add({
+            name: 'Ganhe',
+            polygon: {
+                hierarchy: Cesium.Cartesian3.fromDegreesArray([
+                    101.518675, 36.545383,
+                    101.520573, 36.537018,
+                    101.526275, 36.538268
+                ]),
+                height: 0,
+                material: Cesium.Color.RED.withAlpha(0.5),
+                outline: true,
+                outlineColor: Cesium.Color.BLACK
+            }
+        });
+
+        viewer.zoomTo(ganhe);
+        //    var heading  = Cesium.Math.toRadians(90);
+        //    var pitch = Cesium.Math.toRadians(-80);
+        // viewer.zoomTo(wyoming, new Cesium.HeadingPitchRange(heading, pitch));
+
+        viewer.flyTo(ganhe).then(function (result) {
+            if (result) {
+                viewer.selectedEntity = ganhe;
+            }
+        });
+
+        var entity = viewer.entities.add({
+            position: Cesium.Cartesian3.fromDegrees(-103.0, 40.0),
+            ellipse: {
+                semiMinorAxis: 250000.0,
+                semiMajorAxis: 400000.0,
+                material: Cesium.Color.BLUE.withAlpha(0.5)
+            }
+        });
+        // var ellipse = entity.ellipse;
+        // ellipse.material = 'http://cesiumjs.org/images/2015/02-02/materialImage.jpg';
+    </script>
+
+</div>
+
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/polyfill/rem.min.js"></script>
+<script src="assets/js/polyfill/respond.min.js"></script>
+<script src="assets/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/amazeui.min.js"></script>
+<!--<![endif]-->
+
+
+</body>
+</html>
