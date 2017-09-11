@@ -22,9 +22,7 @@
   <script src="CesiumSource/Build/Cesium/Cesium.js"></script>
   <style>
       @import url(CesiumSource/Build/Cesium/Widgets/widgets.css);
-      html, body, #cesiumContainer {
-          width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
-      }
+
       #draggable1 { position: absolute; top: 50px; right: 5px; width: 150px; height: 450px; padding: 0.5em;border: 1px; border-color: red; border-style: solid; background: rgba(42, 42, 42, 0.5); border-radius: 5px; color: #fff; line-height: 150%; z-index: 1;}
       .toolbar-left {
         display: block;
@@ -37,12 +35,19 @@
 　　display: none!important;
 　　visibility: hidden!important;
 }
+      #close {
+          float:right;
+          display:inline-block;
+          padding:2px 5px;
+          background:#ccc;
+      }
      
   </style>
   <link rel="shortcut icon" href="http://pic.nypl.org/nypl.png">
   <link rel="stylesheet" media="all" href="assets/css/application-9cb34b2ead8ea0abe4d3a29d4dcb6003e6178afb76cf6afb.css" data-turbolinks-track="true">
   <link rel="stylesheet" media="all" href="assets/css/pic-3abd8b238d2b609dbf5d134fb8e9a19a5daf6dbdbee75eb371490625.css" />
-  
+
+
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="assets/js/jquery-1.12.0.js"></script>
@@ -67,11 +72,13 @@
         <label style="color:#fff; font-size:20px; font-family:SimHei;">视野高度：</label><input type="text" id="height" style="width:130px; border:none; font-family:SimHei; background-color:transparent; color:#fff; font-size:1.2em" readonly>
     </div>-->
   <!--edited By Xiao Ling @2017/8/27-->
-  <div id="cesiumContainer" style="left: calc(20% + 30%); width: calc(100% - (20% + 30%));" class=""></div>
+  <div style="width: 100%; height: 100%">
+  <div id="cesiumContainer" class=""></div>
   <div id="leftFilter" style="position:relative; width: 50%;">
   <div class="cd-main-content">
 
       <div class="cd-gallery filter-is-visible">
+          <span id='close' onclick='this.parentNode.parentNode.removeChild(this.parentNode); return false;'>x</span>
           <ul>
               <li class="mix color-1 check1 radio2 option3" ><img src="assets/img/img-1.jpg" alt="Image 1"></li>
               <li class="mix color-2 check2 radio2 option2" ><img src="assets/img/img-2.jpg" alt="Image 2"></li>
@@ -176,7 +183,7 @@
       <a href="#0" class="cd-filter-trigger filter-is-visible">数据可视化</a>
   </div> <!-- cd-main-content -->
   </div>
-	
+  </div>
 	<!---------------------------------------------------------------------------------------->
   <!--<div id="gui" z-index="2"></div>-->
   <script src="assets/js/jquery-2.1.1.js"></script>
