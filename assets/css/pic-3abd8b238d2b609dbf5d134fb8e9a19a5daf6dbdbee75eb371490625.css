@@ -235,7 +235,7 @@ hr {
     margin: 0;
     padding: 0;
     overflow: hidden;
-	float: left;
+	position: absolute;
 	-webkit-transition-property: all;
 	-moz-transition-property: all;
 	transition-property: all;

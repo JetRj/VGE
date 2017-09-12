@@ -56,6 +56,17 @@ Main Components
   }
 }
 
+.leftFilter {
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 25%;
+}
+
+.leftFilter.filterResult-is-visible {
+    width: 50%;
+}
+
 .cd-main-content {
   position: relative;
   min-height: 100vh;
@@ -254,7 +265,7 @@ xgallery
 -------------------------------- */
 .cd-gallery {
   padding: 26px 5%;
-  width: 100%;
+  width: 50%;
 }
 .cd-gallery li {
   margin-bottom: 1.6em;
@@ -295,10 +306,14 @@ xgallery
 @media only screen and (min-width: 1170px) {
   .cd-gallery {
     padding: 50px 2%;
-    float: right;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
     -webkit-transition: width 0.3s;
     -moz-transition: width 0.3s;
     transition: width 0.3s;
+    background-color: #ffffff;
   }
   .cd-gallery li {
     width: 23%;
@@ -387,8 +402,11 @@ xfilter
 }
 @media only screen and (min-width: 1170px) {
   .cd-filter {
-    width: 50%;
+    width: 100%;
   }
+    .cd-filter.filterResult-is-visible {
+        width: 50%;
+    }
   .cd-filter form {
     padding: 70px 10%;
   }
