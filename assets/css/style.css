@@ -68,7 +68,10 @@ Main Components
 }
 
 .cd-main-content {
-  position: relative;
+  position: absolute;
+  top: 50px;
+    /*left: 0;*/
+    /*height: 100%;*/
   min-height: 100vh;
 }
 .cd-main-content:after {
@@ -363,7 +366,7 @@ xfilter
   left: 0;
   height: 50px;
   width: 100%;
-  background-color: #41307c;
+  background-color: transparent;
   z-index: 2;
 }
 .cd-filter form {
@@ -422,7 +425,7 @@ xfilter
   /* image replacement */
   overflow: hidden;
   text-indent: 100%;
-  color: transparent;
+  color: #41307c;
   white-space: nowrap;
   background: transparent url("../img/cd-icon-filter.svg") no-repeat center center;
   z-index: 3;

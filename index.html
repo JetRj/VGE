@@ -72,14 +72,17 @@
         <label style="color:#fff; font-size:20px; font-family:SimHei;">视野高度：</label><input type="text" id="height" style="width:130px; border:none; font-family:SimHei; background-color:transparent; color:#fff; font-size:1.2em" readonly>
     </div>-->
   <!--edited By Xiao Ling @2017/8/27-->
-  <div style="width: 100%; height: 100%; position: absolute; top: 0; bottom: 0;">
   <div id="cesiumContainer" class=""></div>
-  <div id="leftFilter" class="leftFilter filterResult-is-visible">
-  <div class="cd-main-content">
+
+  <div id="leftFilter" class="cd-main-content  leftFilter filterResult-is-visible">
+
+      <div style="position: fixed;top: 50px;left: 0;height: 50px;width: 100%;z-index: 999; background-color: #0a6999;width: 20%">
+          <a href="#0" style="" class="cd-filter-trigger filter-is-visible">数据可视化</a>
+      </div>
 
       <div class="cd-gallery filter-is-visible">
           <span id='close' onclick='document.getElementById("leftFilter").classList.remove("filterResult-is-visible");document.getElementById("cd-filter").classList.remove("filterResult-is-visible");  this.parentNode.parentNode.removeChild(this.parentNode); return false;'>x</span>
-          <ul>
+          <ul style="height: 100%">
               <li class="mix color-1 check1 radio2 option3" ><img src="assets/img/img-1.jpg" alt="Image 1"></li>
               <li class="mix color-2 check2 radio2 option2" ><img src="assets/img/img-2.jpg" alt="Image 2"></li>
               <li class="mix color-1 check3 radio3 option1" ><img src="assets/img/img-3.jpg" alt="Image 3"></li>
@@ -99,7 +102,9 @@
           <div class="cd-fail-message">No results found</div>
       </div> <!-- cd-gallery -->
 
+
       <div id="cd-filter" class="cd-filter filter-is-visible filterResult-is-visible"  style="overflow: auto;">
+
           <form>
               <div class="cd-filter-block">
                   <h4>地点搜索</h4>
@@ -180,9 +185,9 @@
           <a href="#0" class="cd-close">关闭</a>
       </div> <!-- cd-filter -->
 
-      <a href="#0" class="cd-filter-trigger filter-is-visible">数据可视化</a>
+
   </div> <!-- cd-main-content -->
-  </div>
+
   </div>
 	<!---------------------------------------------------------------------------------------->
   <!--<div id="gui" z-index="2"></div>-->
