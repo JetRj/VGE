@@ -63,10 +63,6 @@ Main Components
     width: 25%;
 }
 
-.leftFilter.filterResult-is-visible {
-    width: 50%;
-}
-
 .cd-main-content {
   position: absolute;
   top: 50px;
@@ -407,9 +403,6 @@ xfilter
   .cd-filter {
     width: 100%;
   }
-    .cd-filter.filterResult-is-visible {
-        width: 50%;
-    }
   .cd-filter form {
     padding: 70px 10%;
   }
