@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="assets/css/style.css"> <!-- Resource style -->
     <script src="assets/js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="http://jonthornton.github.io/Datepair.js/dist/datepair.js"></script>
+    <script src="http://jonthornton.github.io/Datepair.js/dist/jquery.datepair.js"></script>
   <title>Hello World!</title>
 
   <script src="CesiumSource/Build/Cesium/Cesium.js"></script>
@@ -46,22 +48,26 @@
   <link rel="shortcut icon" href="http://pic.nypl.org/nypl.png">
   <link rel="stylesheet" media="all" href="assets/css/application-9cb34b2ead8ea0abe4d3a29d4dcb6003e6178afb76cf6afb.css" data-turbolinks-track="true">
   <link rel="stylesheet" media="all" href="assets/css/pic-3abd8b238d2b609dbf5d134fb8e9a19a5daf6dbdbee75eb371490625.css" />
+    <link rel="stylesheet" href="assets/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.css">
 
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="assets/js/jquery-1.12.0.js"></script>
+  <!--<script src="assets/js/jquery-1.12.0.js"></script>-->
   <script src = "assets/js/dat.gui.min.js"></script>
   <script src="assets/js/test-gui.js"></script>
   <script src="assets/js/PositionPick.js"></script>
   <script src="assets/js/settingFunc.js"></script>
+    <script src="assets/js/jquery.timepicker.js"></script>
+    <script src="assets/js/bootstrap-datepicker.js"></script>
 </head>
 <!--<body onload="position();">-->
 <body>
-  <header>
-  <a id="nypl" href="http://www.scet.com.cn/" target="_blank">Z</a><a href="http://nypl.org/" target="_blank">中联兴环保科技有限公司</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="http://pic.nypl.org/" data-no-turbolink="">青海甘河园区环境污染可视化</a>&nbsp;&nbsp;/&nbsp;&nbsp;Map<a class="map-help-link" href="#">Help</a>
-
-</header>
+  <div  style="z-index: 999; position: absolute; top: 0; left: 0; width: 100%; height: 50px; background-color: black" >
+      <a style="" id="nypl" href="http://www.scet.com.cn/" target="_blank">Z</a><a href="http://nypl.org/" target="_blank">中联兴环保科技有限公司</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="http://pic.nypl.org/" data-no-turbolink="">青海甘河园区环境污染可视化</a>&nbsp;&nbsp;/&nbsp;&nbsp;Map<a class="map-help-link" href="#">Help</a>
+  </div>
 
   <!--edited By Xiao Ling @2017/8/27-->
   <!--<div id="cesiumContainer" class="fullSize">
@@ -106,21 +112,12 @@
       <div id="cd-filter" class="cd-filter filter-is-visible filterResult-is-visible"  style="overflow: auto;">
 
           <form>
-              <div class="cd-filter-block">
-                  <h4>地点搜索</h4>
-                  <div class="cd-filter-content">
-                      <input type="search" placeholder="输入站名或其他">
-                  </div> <!-- cd-filter-content -->
-              </div> <!-- cd-filter-block -->
-
-      <div class="cd-filter-block">
-        <h4>按时间搜索</h4>
-        <div class="cd-filter-content">
-          <input type="search" placeholder="起始" style="width: 45%;display: inline; position: relative;">
-          <input type="search" placeholder="终止" style="width: 45%;display: inline; position: relative;">
-        </div>
-      </div>
-
+              <!--<div class="cd-filter-block">-->
+                  <!--<h4>地点搜索</h4>-->
+                  <!--<div class="cd-filter-content">-->
+                      <!--<input type="search" placeholder="输入站名或其他">-->
+                  <!--</div> &lt;!&ndash; cd-filter-content &ndash;&gt;-->
+              <!--</div> &lt;!&ndash; cd-filter-block &ndash;&gt;-->
               <div class="cd-filter-block">
                   <h4>按园区搜索</h4>
                   <ul class="cd-filter-content cd-filters list">
@@ -180,6 +177,32 @@
                       </li>
                   </ul> <!-- cd-filter-content -->
               </div> <!-- cd-filter-block -->
+      <div class="cd-filter-block">
+        <h4>按时间搜索</h4>
+        <div class="cd-filter-content">
+            <p id="datepairExample">
+                <input type="text" class="date start" />
+                <input type="text" class="time start" /> to
+                <input type="text" class="time end" />
+                <input type="text" class="date end" />
+            </p>
+        </div>
+          <script>
+              $('#datepairExample .time').timepicker({
+                  'showDuration': true,
+                  'timeFormat': 'g:ia'
+              });
+
+              $('#datepairExample .date').datepicker({
+                  'format': 'm/d/yyyy',
+                  'autoclose': true
+              });
+
+              $('#datepairExample').datepair();
+          </script>
+      </div>
+
+
           </form>
 
           <a href="#0" class="cd-close">关闭</a>
