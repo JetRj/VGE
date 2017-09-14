@@ -132,12 +132,12 @@ html,body {
 }
 
 a:link {
-	color: #900;
-	text-decoration: none
+	color: #ffffff;
+	/*text-decoration: none*/
 }
 
 a:visited {
-	color: #660000
+	/*color: #660000*/
 }
 
 h3 {

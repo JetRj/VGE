@@ -1,30 +1,4 @@
-﻿header {
-    background-color: #222;
-    height: 50px;
-    color: #a2a2a2;
-    padding: 8px;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    box-direction: normal;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-direction: row;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    box-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    -o-align-items: center;
-    align-items: center;
-    -ms-flex-align: center;
-    border-top: 2px solid #ed1c24;
-}
+﻿
 html {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -103,6 +77,33 @@ html,body {
 #webgl-overlay p a.browser:hover {
 	background: #efefef;
 	color: #900
+}
+
+.hoverHeader {
+	background-color: #222;
+	height: 50px;
+	color: #ffffff;
+	padding: 8px;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-moz-box-direction: normal;
+	box-direction: normal;
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-direction: row;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	box-align: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	-o-align-items: center;
+	align-items: center;
+	-ms-flex-align: center;
 }
 
 .cesium-viewer-toolbar {
