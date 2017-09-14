@@ -137,7 +137,7 @@ a:link {
 }
 
 a:visited {
-	/*color: #660000*/
+	color: #ffffff;
 }
 
 h3 {
@@ -201,8 +201,8 @@ p {
 }
 
 .enter-link:link,.enter-link:visited {
-	background-color: #900;
-	color: #efefef
+	/*background-color: #900;*/
+	/*color: #efefef*/
 }
 
 .enter-link:hover {

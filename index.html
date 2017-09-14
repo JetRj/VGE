@@ -69,28 +69,20 @@
       <a style="" id="nypl" href="http://www.scet.com.cn/" target="_blank">Z</a><a href="http://nypl.org/" target="_blank">中联兴环保科技有限公司</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="http://pic.nypl.org/" data-no-turbolink="">青海甘河园区环境污染可视化</a>&nbsp;&nbsp;/&nbsp;&nbsp;Map<a class="map-help-link" href="#">Help</a>
   </div>
 
-  <!--edited By Xiao Ling @2017/8/27-->
-  <!--<div id="cesiumContainer" class="fullSize">
-  
-	<div id="geoPosition" style="z-index:10; position:absolute; bottom:45px; right:0px; visibility:visible;">
-        <label style="color:#fff; font-size:20px; font-family:SimHei;">经度：</label><input type="text" id="longitude" style="width:130px; border:none; font-family:SimHei; background-color:transparent; color:#fff; font-size:1.2em" readonly>
-        <label style="color:#fff; font-size:20px; font-family:SimHei;">纬度：</label><input type="text" id="latitude" style="width:130px; border:none; font-family:SimHei; background-color:transparent; color:#fff; font-size:1.2em" readonly>
-        <label style="color:#fff; font-size:20px; font-family:SimHei;">视野高度：</label><input type="text" id="height" style="width:130px; border:none; font-family:SimHei; background-color:transparent; color:#fff; font-size:1.2em" readonly>
-    </div>-->
-  <!--edited By Xiao Ling @2017/8/27-->
   <div id="cesiumContainer" class=""></div>
 
-  <div id="leftFilter" class="cd-main-content  leftFilter filterResult-is-visible">
+  <div id="leftFilter" class="cd-main-content is-fixed leftFilter filterResult-is-visible">
 
-      <div style="position: fixed;top: 50px;left: 0;height: 50px;width: 100%;z-index: 999; background-color: #0a6999;width: 20%">
-          <a href="#0" style="" class="cd-filter-trigger filter-is-visible">数据可视化</a>
+      <div style="position: fixed;top: 50px;left: 0;height: 50px;width: 25%;z-index: 999; background-color: #0a6999;">
+          <a href="#0" style="" class="cd-filter-trigger filter-is-visible" style="left: 0; position: absolute">数据可视化</a>
+          <a href="#0" class="cd-close" style="right: 0; position: absolute">关闭</a>
       </div>
 
       <div id="cd-filter" class="cd-filter filter-is-visible filterResult-is-visible"  style="overflow: auto;">
 
           <form>
               <div class="cd-filter-block">
-                  <h4>按园区搜索</h4>
+                  <h4>园区</h4>
                   <ul class="cd-filter-content cd-filters list">
                       <li>
                           <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
@@ -109,8 +101,8 @@
                   </ul> <!-- cd-filter-content -->
               </div> <!-- cd-filter-block -->
 
-              <div class="cd-filter-block">
-                  <h4>按测站搜索</h4>
+              <div class="cd-filter-block" style="position: relative; left: 10px;">
+                  <h4>站房</h4>
                   <ul class="cd-filter-content cd-filters list">
                       <li>
                           <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
@@ -129,8 +121,8 @@
                   </ul> <!-- cd-filter-content -->
               </div> <!-- cd-filter-block -->
 
-              <div class="cd-filter-block">
-                  <h4>按传感器搜索</h4>
+              <div class="cd-filter-block" style="position: relative; left: 20px;">
+                  <h4>仪器</h4>
                   <ul class="cd-filter-content cd-filters list">
                       <li>
                           <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
@@ -148,6 +140,26 @@
                       </li>
                   </ul> <!-- cd-filter-content -->
               </div> <!-- cd-filter-block -->
+              <div class="cd-filter-block" style="position: relative; left: 30px;">
+                  <h4>因子（最多10种）</h4>
+                  <ul class="cd-filter-content cd-filters list">
+                      <li>
+                          <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
+                          <label class="checkbox-label" for="checkbox1">SO2传感器</label>
+                      </li>
+
+                      <li>
+                          <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
+                          <label class="checkbox-label" for="checkbox2">NO2传感器</label>
+                      </li>
+
+                      <li>
+                          <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                          <label class="checkbox-label" for="checkbox3">NO传感器</label>
+                      </li>
+                  </ul> <!-- cd-filter-content -->
+              </div> <!-- cd-filter-block -->
+
       <div class="cd-filter-block">
         <h4>按时间搜索</h4>
         <div class="cd-filter-content">
@@ -176,7 +188,6 @@
 
           </form>
 
-          <a href="#0" class="cd-close">关闭</a>
       </div> <!-- cd-filter -->
 
 
