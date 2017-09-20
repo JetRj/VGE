@@ -65,10 +65,10 @@ Main Components
 
 .cd-main-content {
   position: absolute;
-  top: 50px;
+  top: 0;
     /*left: 0;*/
-    /*height: 100%;*/
-  min-height: 100vh;
+    height: 100%;
+  /*min-height: 100vh;*/
 }
 .cd-main-content:after {
   content: "";
@@ -89,8 +89,8 @@ Main Components
   overflow: hidden;
 }
 .cd-main-content.is-fixed .cd-filter form {
-  height: 100vh;
-  overflow: auto;
+  /*height: 100vh;*/
+  overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
 .cd-main-content.is-fixed .cd-filter-trigger {
@@ -353,19 +353,19 @@ xfilter
   -moz-transition: -moz-transform 0.3s, box-shadow 0.3s;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.cd-filter::before {
-  /* top colored bar */
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 100%;
-  background-color: transparent;
-  z-index: 2;
-}
+/*.cd-filter::before {*/
+  /*!* top colored bar *!*/
+  /*content: '';*/
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*height: 50px;*/
+  /*width: 100%;*/
+  /*background-color: transparent;*/
+  /*z-index: 2;*/
+/*}*/
 .cd-filter form {
-  padding: 50px 20px;
+  padding: 0px 20px 50px;
 }
 .cd-close {
   position: absolute;
@@ -402,7 +402,7 @@ xfilter
     /*width: 25%;*/
   }
   .cd-filter form {
-    padding: 10px;
+    /*padding: 10px;*/
   }
 }
 
