@@ -56,13 +56,19 @@ Main Components
   }
 }
 
-.leftFilter {
+.leftFilter.filter-is-visible {
     position:absolute;
     left: 0;
     top: 0;
     width: 25%;
 }
 
+.leftFilter {
+  position:absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+}
 .cd-main-content {
   position: absolute;
   top: 0;

@@ -8,7 +8,7 @@ jQuery(document).ready(function($){
 	});
 
 	function triggerFilter($bool) {
-		var elementsToTrigger = $([$('.cd-filter-trigger'), $('.cd-filter'), $('.cd-tab-filter'), $('.cd-gallery')]);
+		var elementsToTrigger = $([$('.cd-filter-trigger'), $('.cd-filter'), $('.cd-tab-filter'), $('.cd-gallery'), $(".leftFilter")]);
 		elementsToTrigger.each(function(){
 			$(this).toggleClass('filter-is-visible', $bool);
 		});
