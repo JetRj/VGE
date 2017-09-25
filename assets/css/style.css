@@ -30,6 +30,24 @@ a {
   text-decoration: none;
 }
 
+/* 云朵状 */
+
+hr.style-five {
+  border: 0;
+  height: 2px; /* Firefox... */
+  box-shadow: 0 0 15px 1px #888888;
+  /*padding: 10px;*/
+  margin: 27px 0;
+  left: 0;
+  right: 0;
+  background-color: #0000002e;
+}
+hr.style-five:after {  /* Not really supposed to work, but does */
+  content: "\00a0";  /* Prevent margin collapse */
+}
+
+
+
 /* -------------------------------- 
 
 Main Components 
