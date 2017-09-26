@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Use correct character set. -->
-  <meta charset="utf-8">
-  <!-- Tell IE to use the latest, best version. -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-  <!--edit By Xiao Ling @2017/8/23-->
-  <meta name="theme-color" content="#333333">
-  <!--edit By Xiao Ling @2017/8/23-->
-  <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Use correct character set. -->
+    <meta charset="utf-8">
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!--edit By Xiao Ling @2017/8/23-->
+    <meta name="theme-color" content="#333333">
+    <!--edit By Xiao Ling @2017/8/23-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="assets/css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="assets/css/style.css"> <!-- Resource style -->
     <script src="assets/js/modernizr.js"></script> <!-- Modernizr -->
-    <script src="http://jonthornton.github.io/Datepair.js/dist/datepair.js"></script>
-    <script src="http://jonthornton.github.io/Datepair.js/dist/jquery.datepair.js"></script>
-  <title>Hello World!</title>
 
-  <script src="CesiumSource/Build/Cesium/Cesium.js"></script>
-  <style>
-      @import url(CesiumSource/Build/Cesium/Widgets/widgets.css);
-
-	  .cesium-widget-credits {
-　　display: none!important;
-　　visibility: hidden!important;
-}
-      #close {
-          float:right;
-          display:inline-block;
-          padding:2px 5px;
-          background:#ccc;
-      }
-     
-  </style>
-  <link rel="shortcut icon" href="http://pic.nypl.org/nypl.png">
-  <link rel="stylesheet" media="all" href="assets/css/application-9cb34b2ead8ea0abe4d3a29d4dcb6003e6178afb76cf6afb.css" data-turbolinks-track="true">
-  <link rel="stylesheet" media="all" href="assets/css/pic-3abd8b238d2b609dbf5d134fb8e9a19a5daf6dbdbee75eb371490625.css" />
-    <link rel="stylesheet" href="assets/css/jquery.timepicker.css">
-    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.css">
+    <!--<link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">-->
+    <!--<script src="https://unpkg.com/flatpickr"></script>-->
 
 
-  <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+    <title>Hello World!</title>
+
+    <script src="CesiumSource/Build/Cesium/Cesium.js"></script>
+    <style>
+        @import url(CesiumSource/Build/Cesium/Widgets/widgets.css);
+
+        .cesium-widget-credits {
+            　　display: none!important;
+            　　visibility: hidden!important;
+        }
+        #close {
+            float:right;
+            display:inline-block;
+            padding:2px 5px;
+            background:#ccc;
+        }
+
+    </style>
+    <link rel="shortcut icon" href="http://pic.nypl.org/nypl.png">
+    <link rel="stylesheet" media="all" href="assets/css/application-9cb34b2ead8ea0abe4d3a29d4dcb6003e6178afb76cf6afb.css" data-turbolinks-track="true">
+    <link rel="stylesheet" media="all" href="assets/css/pic-3abd8b238d2b609dbf5d134fb8e9a19a5daf6dbdbee75eb371490625.css" />
+
+    <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!--<script src="assets/js/jquery-1.12.0.js"></script>-->
-  <script src = "assets/js/dat.gui.min.js"></script>
-  <script src="assets/js/test-gui.js"></script>
-  <script src="assets/js/PositionPick.js"></script>
-  <script src="assets/js/settingFunc.js"></script>
-    <script src="assets/js/jquery.timepicker.js"></script>
-    <script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--<script src="assets/js/jquery-1.12.0.js"></script>-->
+    <script src = "assets/js/dat.gui.min.js"></script>
+    <script src="assets/js/test-gui.js"></script>
+    <script src="assets/js/PositionPick.js"></script>
+    <script src="assets/js/settingFunc.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+    <script src="https://unpkg.com/flatpickr"></script>
+
+
 </head>
 <!--<body onload="position();">-->
 <body>
-  <div  class="hoverHeader"  style="z-index: 999; position: absolute; top: 0; left: 0; width: 100%; height: 50px; background-color: black" >
-      <a style="" id="nypl" href="http://www.scet.com.cn/" target="_blank">Z</a><a href="http://nypl.org/" target="_blank">中联兴环保科技有限公司</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="http://pic.nypl.org/" data-no-turbolink="">青海甘河园区环境污染可视化</a>&nbsp;&nbsp;/&nbsp;&nbsp;Map<a class="map-help-link" href="#">Help</a>
-  </div>
+<div  class="hoverHeader"  style="z-index: 999; position: absolute; top: 0; left: 0; width: 100%; height: 50px; background-color: black" >
+    <a style="" id="nypl" href="http://www.scet.com.cn/" target="_blank">Z</a><a href="http://nypl.org/" target="_blank">中联兴环保科技有限公司</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="http://pic.nypl.org/" data-no-turbolink="">青海甘河园区环境污染可视化</a>&nbsp;&nbsp;/&nbsp;&nbsp;Map<a class="map-help-link" href="#">Help</a>
+</div>
 
 <div id="main" style="
     top: 50px;
@@ -69,212 +72,209 @@
     bottom: 0;
 ">
 
-  <div id="cesiumContainer" class=""></div>
+    <div id="cesiumContainer" class=""></div>
 
-  <div id="leftFilter" class="cd-main-content is-fixed leftFilter filter-is-visible">
+    <div id="leftFilter" class="cd-main-content is-fixed leftFilter filter-is-visible">
 
-      <div style="position: fixed;top: 50px;left: 0;height: 50px;width: 25%;z-index: 999; background-color: #0a6999;">
-          <a href="#0" style="" class="cd-filter-trigger filter-is-visible" style="left: 0; position: absolute">数据可视化</a>
-          <a href="#0" class="cd-close" style="right: 0; position: absolute">关闭</a>
-      </div>
-
-      <div id="cd-filter" class="cd-filter filter-is-visible"  style="overflow: scroll;">
-
-          <form>
-              <div class="cd-filter-block">
-                  <h4>园区</h4>
-                  <ul class="cd-filter-content cd-filters list">
-                      <li>
-                          <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                          <label class="checkbox-label" for="checkbox1">甘河东区</label>
-                      </li>
-
-                      <li>
-                          <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                          <label class="checkbox-label" for="checkbox2">甘河西区</label>
-                      </li>
-
-                      <li>
-                          <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                          <label class="checkbox-label" for="checkbox3">北川厂区</label>
-                      </li>
-                  </ul> <!-- cd-filter-content -->
-              </div> <!-- cd-filter-block -->
-
-              <div class="cd-filter-block" style="position: relative; left: 10px;">
-                  <h4>站房</h4>
-                  <ul class="cd-filter-content cd-filters list">
-                      <li>
-                          <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                          <label class="checkbox-label" for="checkbox1">测站1</label>
-                      </li>
-
-                      <li>
-                          <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                          <label class="checkbox-label" for="checkbox2">测站2</label>
-                      </li>
-
-                      <li>
-                          <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                          <label class="checkbox-label" for="checkbox3">测站3</label>
-                      </li>
-                  </ul> <!-- cd-filter-content -->
-              </div> <!-- cd-filter-block -->
-
-              <div class="cd-filter-block" style="position: relative; left: 20px;">
-                  <h4>仪器</h4>
-                  <ul class="cd-filter-content cd-filters list">
-                      <li>
-                          <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                          <label class="checkbox-label" for="checkbox1">SO2传感器</label>
-                      </li>
-
-                      <li>
-                          <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                          <label class="checkbox-label" for="checkbox2">NO2传感器</label>
-                      </li>
-
-                      <li>
-                          <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                          <label class="checkbox-label" for="checkbox3">NO传感器</label>
-                      </li>
-                  </ul> <!-- cd-filter-content -->
-              </div> <!-- cd-filter-block -->
-              <div class="cd-filter-block" style="position: relative; left: 30px;">
-                  <h4>因子（最多10种）</h4>
-                  <ul class="cd-filter-content cd-filters list">
-                      <li>
-                          <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                          <label class="checkbox-label" for="checkbox1">SO2传感器</label>
-                      </li>
-
-                      <li>
-                          <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                          <label class="checkbox-label" for="checkbox2">NO2传感器</label>
-                      </li>
-
-                      <li>
-                          <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                          <label class="checkbox-label" for="checkbox3">NO传感器</label>
-                      </li>
-                  </ul> <!-- cd-filter-content -->
-              </div> <!-- cd-filter-block -->
-              <hr class="style-five" />
-
-      <div class="cd-filter-block">
-        <h4>按时间搜索</h4>
-        <div class="cd-filter-content">
-            <p id="datepairExample">
-                <input type="text" class="date start" />
-                <input type="text" class="time start" /> to
-                <input type="text" class="time end" />
-                <input type="text" class="date end" />
-            </p>
+        <div style="position: fixed;top: 50px;left: 0;height: 50px;width: 25%;z-index: 999; background-color: #0a6999;">
+            <a href="#0" style="" class="cd-filter-trigger filter-is-visible" style="left: 0; position: absolute">数据可视化</a>
+            <a href="#0" class="cd-close" style="right: 0; position: absolute">关闭</a>
         </div>
-          <script>
-              $('#datepairExample .time').timepicker({
-                  'showDuration': true,
-                  'timeFormat': 'g:ia'
-              });
 
-              $('#datepairExample .date').datepicker({
-                  'format': 'm/d/yyyy',
-                  'autoclose': true
-              });
+        <div id="cd-filter" class="cd-filter filter-is-visible"  style="overflow: scroll;">
 
-              $('#datepairExample').datepair();
-          </script>
-      </div>
+            <form>
+                <div class="cd-filter-block">
+                    <h4>园区</h4>
+                    <ul class="cd-filter-content cd-filters list">
+                        <li>
+                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
+                            <label class="checkbox-label" for="checkbox1">甘河东区</label>
+                        </li>
 
+                        <li>
+                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
+                            <label class="checkbox-label" for="checkbox2">甘河西区</label>
+                        </li>
 
-          </form>
+                        <li>
+                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                            <label class="checkbox-label" for="checkbox3">北川厂区</label>
+                        </li>
+                    </ul> <!-- cd-filter-content -->
+                </div> <!-- cd-filter-block -->
 
-      </div> <!-- cd-filter -->
+                <div class="cd-filter-block" style="position: relative; left: 10px;">
+                    <h4>站房</h4>
+                    <ul class="cd-filter-content cd-filters list">
+                        <li>
+                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
+                            <label class="checkbox-label" for="checkbox1">测站1</label>
+                        </li>
 
+                        <li>
+                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
+                            <label class="checkbox-label" for="checkbox2">测站2</label>
+                        </li>
 
-  </div> <!-- cd-main-content -->
+                        <li>
+                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                            <label class="checkbox-label" for="checkbox3">测站3</label>
+                        </li>
+                    </ul> <!-- cd-filter-content -->
+                </div> <!-- cd-filter-block -->
+
+                <div class="cd-filter-block" style="position: relative; left: 20px;">
+                    <h4>仪器</h4>
+                    <ul class="cd-filter-content cd-filters list">
+                        <li>
+                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
+                            <label class="checkbox-label" for="checkbox1">SO2传感器</label>
+                        </li>
+
+                        <li>
+                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
+                            <label class="checkbox-label" for="checkbox2">NO2传感器</label>
+                        </li>
+
+                        <li>
+                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                            <label class="checkbox-label" for="checkbox3">NO传感器</label>
+                        </li>
+                    </ul> <!-- cd-filter-content -->
+                </div> <!-- cd-filter-block -->
+                <div class="cd-filter-block" style="position: relative; left: 30px;">
+                    <h4>因子（最多10种）</h4>
+                    <ul class="cd-filter-content cd-filters list">
+                        <li>
+                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
+                            <label class="checkbox-label" for="checkbox1">SO2传感器</label>
+                        </li>
+
+                        <li>
+                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
+                            <label class="checkbox-label" for="checkbox2">NO2传感器</label>
+                        </li>
+
+                        <li>
+                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                            <label class="checkbox-label" for="checkbox3">NO传感器</label>
+                        </li>
+                    </ul> <!-- cd-filter-content -->
+                </div> <!-- cd-filter-block -->
+                <hr class="style-five" />
+
+                <div class="cd-filter-block">
+                    <h4>按时间搜索</h4>
+                    <div class="cd-filter-content">
+                        <div style="width: 100%; overflow: hidden; text-align: center;" >
+                            <label style="float: left; width: 30%; vertical-align: center">起始时间:</label><input class='flatpickr' id="startTimePicker" data-enabletime=true style="float: left; width: 70%">
+                        </div>
+                            <div style="width: 100%; overflow: hidden" >
+
+                            <label style="float: left; width: 30%; vertical-align: center">终止时间:</label><input class='flatpickr' id="endTimePicker" data-enabletime=true style="float: left; width: 70%">
+                            </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div style="text-align: center"><button style="width: 50%; display: inline-block; background-color: #37296a; height: 35px; color:white; font-size: 1em;">搜索</button></div>
+                </div>
+            </form>
+
+        </div> <!-- cd-filter -->
+
+    </div> <!-- cd-main-content -->
 </div>
 
-	<!---------------------------------------------------------------------------------------->
-  <!--<div id="gui" z-index="2"></div>-->
-  <script src="assets/js/jquery-2.1.1.js"></script>
-  <script src="assets/js/jquery.mixitup.min.js"></script>
-  <script src="assets/js/main.js"></script> <!-- Resource jQuery -->
-  <script>
-  <!--edit By Xiao Ling @2017/8/27-->
+<!---------------------------------------------------------------------------------------->
+<!--<div id="gui" z-index="2"></div>-->
+<script src="assets/js/jquery-2.1.1.js"></script>
+<script src="assets/js/jquery.mixitup.min.js"></script>
+<script src="assets/js/main.js"></script> <!-- Resource jQuery -->
+<script>
+    <!--edit By Xiao Ling @2017/8/27-->
 
-   options = {positionPick:true,
-              }
-   
-   function Core(cesiumContainer,expander, options) {
-    var that = this;
-	//判断Cesium是否加载
-	
-    if (typeof Cesium !== "object") {
-        throw '需要加载Cesium';
+    options = {positionPick:true,
     }
-	
-	if (!Cesium.defined(cesiumContainer)) {
-        throw new Cesium.DeveloperError('Core()的cesiumContainer参数未设置.');
-    }
-	if (!Cesium.defined(expander)) {
-        throw new Cesium.DeveloperError('Core的expander参数未设置.');
-    }
-    options = Cesium.defaultValue(options, Cesium.defaultValue.EMPTY_OBJECT);
-	
-    
-	var viewer = new Cesium.Viewer(cesiumContainer);
-	viewer._cesiumWidget._creditContainer.style.display="none"; 
-    var options1 = {
-        camera : viewer.scene.camera,
-        canvas : viewer.scene.canvas
-    };
-    var extent = Cesium.Rectangle.fromDegrees(101.432053, 36.403152,102.101701, 36.96018);
-    Cesium.Camera.DEFAULT_VIEW_RECTANGLE = extent;
-    Cesium.Camera.DEFAULT_VIEW_FACTOR = 0;
-    viewer.dataSources.add(Cesium.KmlDataSource.load('zlx0.kml', options1));
-    viewer.dataSources.add(Cesium.KmlDataSource.load('zlx1.kml', options1));
-    viewer.camera.setView({
-        destination: extent
-    });
-	//申明positionPick的属性值，如为True，则执行Position控件代码
-	//下一步的计划是用Hogan的template控制positionPick控件，使之与屏幕解耦合
-	that.positionPick = Cesium.defaultValue(options.positionPick, false);
-	if(that.positionPick){
-	position(viewer);}
-	console.log("ok")
-	//这一部分为地图提供商
-    Cesium.BingMapsApi.defaultKey = 'AiJl-bPJBWlZ62fE-RhzcGKAgVb3dMWMFa5zm5PxmPArR7IXEhjSj5exL1tQ8j02';
 
-    var defaultBaseMaps = []; //setting up the array to pack with basemaps
+    function Core(cesiumContainer,expander, options) {
+        var that = this;
+        //判断Cesium是否加载
 
-    defaultBaseMaps.push(new Cesium.ProviderViewModel({
-        name: 'Bing Maps with Labels',
-        iconUrl: Cesium.buildModuleUrl('Widgets/Images/ImageryProviders/bingAerialLabels.png'),
-        tooltip: 'Bing Maps aerial imagery with label overlays \nhttp://www.bing.com/maps',
-        creationFunction: function () {
-            return new Cesium.BingMapsImageryProvider({
-                url: '//dev.virtualearth.net',
-                mapStyle: Cesium.BingMapsStyle.AERIAL_WITH_LABELS
-            });
+        if (typeof Cesium !== "object") {
+            throw '需要加载Cesium';
         }
-    }));
 
-    defaultBaseMaps.push(new Cesium.ProviderViewModel({
-        name: 'Bing Maps',
-        iconUrl: Cesium.buildModuleUrl('Widgets/Images/ImageryProviders/bingAerial.png'),
-        tooltip: 'Bing Maps aerial imagery \nhttp://www.bing.com/maps',
-        creationFunction: function () {
-            return new Cesium.BingMapsImageryProvider({
-                url: '//dev.virtualearth.net',
-                mapStyle: Cesium.BingMapsStyle.AERIAL
-            });
+        if (!Cesium.defined(cesiumContainer)) {
+            throw new Cesium.DeveloperError('Core()的cesiumContainer参数未设置.');
         }
-    }));
-}
- core = new Core('cesiumContainer','#gui', options); 
-	
-  </script>
+        if (!Cesium.defined(expander)) {
+            throw new Cesium.DeveloperError('Core的expander参数未设置.');
+        }
+        options = Cesium.defaultValue(options, Cesium.defaultValue.EMPTY_OBJECT);
+
+
+        var viewer = new Cesium.Viewer(cesiumContainer);
+        viewer._cesiumWidget._creditContainer.style.display="none";
+        var options1 = {
+            camera : viewer.scene.camera,
+            canvas : viewer.scene.canvas
+        };
+        var extent = Cesium.Rectangle.fromDegrees(101.432053, 36.403152,102.101701, 36.96018);
+        Cesium.Camera.DEFAULT_VIEW_RECTANGLE = extent;
+        Cesium.Camera.DEFAULT_VIEW_FACTOR = 0;
+        viewer.dataSources.add(Cesium.KmlDataSource.load('zlx0.kml', options1));
+        viewer.dataSources.add(Cesium.KmlDataSource.load('zlx1.kml', options1));
+        viewer.camera.setView({
+            destination: extent
+        });
+        //申明positionPick的属性值，如为True，则执行Position控件代码
+        //下一步的计划是用Hogan的template控制positionPick控件，使之与屏幕解耦合
+        that.positionPick = Cesium.defaultValue(options.positionPick, false);
+        if(that.positionPick){
+            position(viewer);}
+        console.log("ok")
+        //这一部分为地图提供商
+        Cesium.BingMapsApi.defaultKey = 'AiJl-bPJBWlZ62fE-RhzcGKAgVb3dMWMFa5zm5PxmPArR7IXEhjSj5exL1tQ8j02';
+
+        var defaultBaseMaps = []; //setting up the array to pack with basemaps
+
+        defaultBaseMaps.push(new Cesium.ProviderViewModel({
+            name: 'Bing Maps with Labels',
+            iconUrl: Cesium.buildModuleUrl('Widgets/Images/ImageryProviders/bingAerialLabels.png'),
+            tooltip: 'Bing Maps aerial imagery with label overlays \nhttp://www.bing.com/maps',
+            creationFunction: function () {
+                return new Cesium.BingMapsImageryProvider({
+                    url: '//dev.virtualearth.net',
+                    mapStyle: Cesium.BingMapsStyle.AERIAL_WITH_LABELS
+                });
+            }
+        }));
+
+        defaultBaseMaps.push(new Cesium.ProviderViewModel({
+            name: 'Bing Maps',
+            iconUrl: Cesium.buildModuleUrl('Widgets/Images/ImageryProviders/bingAerial.png'),
+            tooltip: 'Bing Maps aerial imagery \nhttp://www.bing.com/maps',
+            creationFunction: function () {
+                return new Cesium.BingMapsImageryProvider({
+                    url: '//dev.virtualearth.net',
+                    mapStyle: Cesium.BingMapsStyle.AERIAL
+                });
+            }
+        }));
+    }
+    core = new Core('cesiumContainer','#gui', options);
+
+    flatpickr(".flatpickr",{ dateFormat: 'm-d-Y h:i', enableTime: true, time_24hr: true});
+
+
+    //  flatpickr(".myClass", {}); // creates multiple instances
+    //  flatpickr(element, {}); // https://developer.mozilla.org/en-US/docs/Web/API/Element
+    //  $(".selector").flatpickr();
+
+</script>
 
 </body>
 </html>

@@ -3,3 +3,4 @@ CesiumSource/
 .idea/
 __MACOSX/
 archive/
+node_modules
