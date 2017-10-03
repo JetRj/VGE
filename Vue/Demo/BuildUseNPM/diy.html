@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../../node_modules/tree-component/tree.min.css" />
+<style>
+.my-custom-icon {
+background-image: url("tree-icon-5709efbab84abcc4d5146afe8b7abc69.png") !important;
+background-position: center center !important;
+background-size: auto;
+}
+</style>
+</head><body>
+<div id="container"></div>
+<tree :data="data"
+    @toggle="toggle($event)"
+    @change="change($event)">
+</tree>
+<!-- <script src="index.bundle-4aa42aa4cd2794c4866844c340e037bb.js" crossOrigin="anonymous" integrity="sha256-DUQsyoY1lRkoktAYEXqMCaz2KMJcqpqcQd8pYBXKYx4="></script> -->
+<script type="text/javascript">
+	import "tree-component/vue";
+
+</script>
+</body></html>
