@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div id="aaa">
+        <!--only render once, not reflect-->
+        <span v-once>Message: {{ msg }}</span>
+
+        <!--???How to?-->
+        <button v-bind:disabled="isButtonDisabled">Button</button>
+        <!--the v-if directive would remove/insert the <p> element based on the truthiness of the value of the expression seen.-->
+        <p v-if="seen">Now you see me</p>
+
+
+        <!--href is the argument,  tells the v-bind directive to bind the element’s href attribute to the value of the expression url.-->
+        <a v-bind:href="url"></a>
+        <!-- shorthand -->
+        <a :href="url"></a>
+
+        <a v-on:click="doSomething"></a>
+        <!-- shorthand -->
+        <a @click="doSomething"></a>
+
+
+        <!--???the .prevent modifier tells the v-on directive to call event.preventDefault() on the triggered event-->
+        <form v-on:submit.prevent="onSubmit"></form>
+
+
+    </div>
+    <script>
+        var app1 = new Vue({
+            el: '#aaa',
+            data:{
+                msg: '123323',
+                seen: true
+            },
+            computed: {
+                isButtonDisabled: function () {
+                    return false;
+                }
+            }
+
+        })//Use app1.msg=''New' to modify
+
+        new Vue({
+            data: {
+                a: 11
+            },
+            // will be triggered on creation
+            created: function () {
+                console.log('a is: ' + this.a)
+            }
+        })
+
+
+    </script>
+
+
+
+</body>
+</html>

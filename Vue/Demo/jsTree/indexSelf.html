@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.3/themes/default/style.min.css" />
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.3/jstree.min.js"></script>
+</head>
+<body>
+	<div id="container">
+
+	</div>
+	<script type="text/javascript">
+		$('#container').jstree({
+	    "core" : {
+	    	"data": {
+	    		"url" : "http://localhost:8000/data.json",
+	    		"dataType" : "json"
+	    	}
+		},
+	    "plugins" : ["checkbox"]
+	  });
+		$('#container').on("changed.jstree", function (e, data) {
+		  console.log(data.instance.get_selected(true)[0].text);7
+		  console.log(data.instance.get_node(data.selected[0]).text);
+		});
+
+	</script>
+</body>

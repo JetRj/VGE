@@ -1,0 +1,57 @@
+[{
+	"id":1,
+	"text": "园区",
+	"state": {
+		"opened": true
+	},
+	"children": [{
+			"id":2,
+			"text": "甘河东区",
+			"state": {
+				"selected": true
+			},
+			"children":[{
+				"id":4,
+				"text": "管委会站",
+				"state": {
+				"selected": true
+				},
+				"children":[{
+					"id":7,
+					"text": "CO2数据",
+					"state": {
+					"selected": true
+					}
+				},{
+					"id":8,
+					"text": "NO2数据",
+					"state": {
+					"selected": true
+					}
+				}]
+			},
+			{
+				"id":5,
+				"text": "海纳1号站",
+				"state": {
+				"selected": true
+				}
+			}]
+
+		},
+		{
+			"id":3,
+			"text": "甘河西区",
+			"state": {
+				"disabled": false
+			}
+		},
+		{
+			"id":6,
+			"text": "北川厂区",
+			"state": {
+				"disabled": false
+			}
+		}
+	]
+}]

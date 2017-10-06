@@ -30,21 +30,6 @@ a {
   text-decoration: none;
 }
 
-/* 云朵状 */
-
-hr.style-five {
-  border: 0;
-  height: 2px; /* Firefox... */
-  /*box-shadow: 0 0 1px 1px #888888;*/
-  /*padding: 10px;*/
-  margin: 27px 0;
-  left: 0;
-  right: 0;
-  background-color: #88888878;
-}
-hr.style-five:after {  /* Not really supposed to work, but does */
-  content: "\00a0";  /* Prevent margin collapse */
-}
 
 
 
@@ -53,6 +38,7 @@ hr.style-five:after {  /* Not really supposed to work, but does */
 Main Components 
 
 -------------------------------- */
+
 .cd-header {
   position: relative;
   height: 150px;
@@ -87,6 +73,21 @@ Main Components
   top: 0;
   width: 0;
 }
+
+hr.style-five {
+  border: 0;
+  height: 2px; /* Firefox... */
+  /*box-shadow: 0 0 1px 1px #888888;*/
+  /*padding: 10px;*/
+  margin: 27px 0;
+  left: 0;
+  right: 0;
+  background-color: #88888878;
+}
+hr.style-five:after {  /* Not really supposed to work, but does */
+  content: "\00a0";  /* Prevent margin collapse */
+}
+
 .cd-main-content {
   position: absolute;
   top: 0;

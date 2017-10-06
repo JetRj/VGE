@@ -53,9 +53,12 @@
     <script src="assets/js/PositionPick.js"></script>
     <script src="assets/js/settingFunc.js"></script>
 
+
     <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
     <script src="https://unpkg.com/flatpickr"></script>
-
+    <link rel="stylesheet" href="assets/css/mixItUpStyle.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.3/themes/default/style.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.3/jstree.min.js"></script>
 
 </head>
 <!--<body onload="position();">-->
@@ -75,120 +78,67 @@
     <div id="cesiumContainer" class=""></div>
 
     <div id="leftFilter" class="cd-main-content is-fixed leftFilter filter-is-visible">
+    <div style="position: fixed;top: 50px;left: 0;height: 50px;width: 25%;z-index: 999; background-color: #0a6999;">
+        <a href="#0" style="" class="cd-filter-trigger filter-is-visible" style="left: 0; position: absolute">数据可视化</a>
+        <a href="#0" class="cd-close" style="right: 0; position: absolute">关闭</a>
+    </div>
 
-        <div style="position: fixed;top: 50px;left: 0;height: 50px;width: 25%;z-index: 999; background-color: #0a6999;">
-            <a href="#0" style="" class="cd-filter-trigger filter-is-visible" style="left: 0; position: absolute">数据可视化</a>
-            <a href="#0" class="cd-close" style="right: 0; position: absolute">关闭</a>
+    <div id="cd-filter" class="cd-filter filter-is-visible" style="overflow: scroll;">
+        <div id="nodes"></div>
+
+        <hr class="style-five" />
+
+        <div class="cd-filter-block">
+            <h4>按时间搜索</h4>
+            <div class="cd-filter-content">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap; white-space: nowrap;line-height: 25px;" >
+                    <div style="order: 0; width: 100%; display: flex; "><label style="display: block; text-align: center; line-height: 40px;">起始时间: </label><input class='flatpickr' id="startTimePicker" data-enabletime=true style=""></div>
+                    <div style="order: 1; width: 100%; display: flex;"><label style="display: block; text-align: center; line-height: 40px;">终止时间: </label><input class='flatpickr' id="endTimePicker" data-enabletime=true style=""></div>
+                </div>
+            </div>
         </div>
 
-        <div id="cd-filter" class="cd-filter filter-is-visible"  style="overflow: scroll;">
-
-            <form>
-                <div class="cd-filter-block">
-                    <h4>园区</h4>
-                    <ul class="cd-filter-content cd-filters list">
-                        <li>
-                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                            <label class="checkbox-label" for="checkbox1">甘河东区</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                            <label class="checkbox-label" for="checkbox2">甘河西区</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                            <label class="checkbox-label" for="checkbox3">北川厂区</label>
-                        </li>
-                    </ul> <!-- cd-filter-content -->
-                </div> <!-- cd-filter-block -->
-
-                <div class="cd-filter-block" style="position: relative; left: 10px;">
-                    <h4>站房</h4>
-                    <ul class="cd-filter-content cd-filters list">
-                        <li>
-                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                            <label class="checkbox-label" for="checkbox1">测站1</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                            <label class="checkbox-label" for="checkbox2">测站2</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                            <label class="checkbox-label" for="checkbox3">测站3</label>
-                        </li>
-                    </ul> <!-- cd-filter-content -->
-                </div> <!-- cd-filter-block -->
-
-                <div class="cd-filter-block" style="position: relative; left: 20px;">
-                    <h4>仪器</h4>
-                    <ul class="cd-filter-content cd-filters list">
-                        <li>
-                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                            <label class="checkbox-label" for="checkbox1">SO2传感器</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                            <label class="checkbox-label" for="checkbox2">NO2传感器</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                            <label class="checkbox-label" for="checkbox3">NO传感器</label>
-                        </li>
-                    </ul> <!-- cd-filter-content -->
-                </div> <!-- cd-filter-block -->
-                <div class="cd-filter-block" style="position: relative; left: 30px;">
-                    <h4>因子（最多10种）</h4>
-                    <ul class="cd-filter-content cd-filters list">
-                        <li>
-                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                            <label class="checkbox-label" for="checkbox1">SO2传感器</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                            <label class="checkbox-label" for="checkbox2">NO2传感器</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                            <label class="checkbox-label" for="checkbox3">NO传感器</label>
-                        </li>
-                    </ul> <!-- cd-filter-content -->
-                </div> <!-- cd-filter-block -->
-                <hr class="style-five" />
-
-                <div class="cd-filter-block">
-                    <h4>按时间搜索</h4>
-                    <div class="cd-filter-content">
-                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; white-space: nowrap;line-height: 25px;" >
-                            <div style="order: 0; width: 100%; display: flex; "><label style="display: block; text-align: center; line-height: 40px;">起始时间: </label><input class='flatpickr' id="startTimePicker" data-enabletime=true style=""></div>
-                            <div style="order: 1; width: 100%; display: flex;"><label style="display: block; text-align: center; line-height: 40px;">终止时间: </label><input class='flatpickr' id="endTimePicker" data-enabletime=true style=""></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div style="text-align: center"><button style="width: 50%; display: inline-block; background-color: #37296a; height: 35px; color:white; font-size: 1em;">搜索</button></div>
-                </div>
-            </form>
-
+        <div>
+            <div style="text-align: center"><button style="width: 50%; display: inline-block; background-color: #37296a; height: 35px; color:white; font-size: 1em;">搜索</button></div>
+        </div>
         </div> <!-- cd-filter -->
-
     </div> <!-- cd-main-content -->
+    <div style="right: 0; position: absolute;" class="">
+        <div class="controls">
+            <button class="control" type="button" data-filter="all">All</button>
+            <button class="control" type="button" data-filter=".green">Category A</button>
+            <button class="control" type="button" data-filter=".blue">Category B</button>
+            <button class="control" type="button" data-filter=".pink">Category C</button>
+        </div>
+        <div class="container">
+            <div class="mix green" data-order="1"></div>
+            <div class="mix blue" data-order="2"></div>
+            <div class="mix blue pink" data-order="3"></div>
+            <div class="mix green pink" data-order="4"></div>
+        </div>
+    </div>
 </div>
 
-<!---------------------------------------------------------------------------------------->
+<script type="text/javascript">
+    $('#nodes').jstree({
+        "core" : {
+            "data": {
+                "url" : "http://localhost:8000/data.json",
+                "dataType" : "json"
+            }
+        },
+        "plugins" : ["checkbox"]
+      });
+    $('#nodes').on("changed.jstree", function (e, data) {
+      console.log(data.instance.get_selected(true)[0].text);7
+      console.log(data.instance.get_node(data.selected[0]).text);
+    });
+</script>
+
 <!--<div id="gui" z-index="2"></div>-->
-<script src="assets/js/jquery-2.1.1.js"></script>
-<script src="assets/js/jquery.mixitup.min.js"></script>
 <script src="assets/js/main.js"></script> <!-- Resource jQuery -->
+<script src="assets/js/jquery.mixitup.min.js"></script>
+
 <script>
     <!--edit By Xiao Ling @2017/8/27-->
 
@@ -196,6 +146,7 @@
     }
 
     function Core(cesiumContainer,expander, options) {
+
         var that = this;
         //判断Cesium是否加载
 
@@ -266,9 +217,59 @@
     flatpickr(".flatpickr",{ dateFormat: 'm-d-Y h:i', enableTime: true, time_24hr: true});
 
 
+//    var containerEl = document.querySelector('.container');
+//    var mixer = mixitup(containerEl);
+//    $('#container').mixItUp({
+//        callbacks: {
+//            onMixLoad: function(state,futureState ){
+//                console.log('mix Loaded');
+//            },
+//            onMixStart: function(state,futureState ){
+//                console.log('mix Start');
+//            },
+//            onMixEnd: function(state, futureState){
+//                console.log('mix End');
+//            }
+//        }
+//    });
+//    var items = $("#search-results .each");
+//    var numItems = items.length;
+//    var perPage = 15;
+//    // only show the first 2 (or "first per_page") items initially
+//    items.slice(perPage).hide();
+//    // now setup your pagination
+//    // you need that .pagination-page div before/after your table
+//    $("#search-pagination").pagination({
+//        items: numItems,
+//        itemsOnPage: perPage,
+//        onPageClick: function(pageNumber) { // this is where the magic happens
+//            // someone changed page, lets hide/show trs appropriately
+//            var showFrom = perPage * (pageNumber - 1);
+//            var showTo = showFrom + perPage;
+//
+//            items.hide() // first hide everything, then show for the new page
+//                .slice(showFrom, showTo).show();
+//        }
+//    });
+
     //  flatpickr(".myClass", {}); // creates multiple instances
     //  flatpickr(element, {}); // https://developer.mozilla.org/en-US/docs/Web/API/Element
     //  $(".selector").flatpickr();
+//    var mixitup = require('mixitup');
+////    var mixer = mixitup('.container');
+//    $(document).ready(function () {
+//        // Instantiate MixItUp:
+//        $('.container').mixItUp({
+//            selectors: {
+//                target: '.mix'
+//            }
+//        });
+//    });
+//    var containerEl = document.querySelector('.container');
+//    var mixer = mixitup(containerEl);
+
+    const vuestrap = require('mixitup');
+//    import mixitup from 'mixitup';
 
 </script>
 

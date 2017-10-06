@@ -1,5 +1,4 @@
-{
-  "baseData": [{
+{"baseData": [{
     "expand": true,
     "title": "parent 1",
     "children": [{
@@ -20,5 +19,4 @@
         "title": "leaf"
       }]
     }]
-  }]
-}
+}]}

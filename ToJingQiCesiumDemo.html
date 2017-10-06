@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Use correct character set. -->
+  <meta charset="utf-8">
+  <!-- Tell IE to use the latest, best version. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Hello World!</title>
+  <script src="CesiumSource/Build/Cesium/Cesium.js"></script>
+  <style>
+      @import url(CesiumSource/Build/Cesium/Widgets/widgets.css);
+      html, body, #cesiumContainer {
+          width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+      }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script>
+        var imageryProvider = new Cesium.createTileMapServiceImageryProvider({
+                url: "http://localhost:8000",
+                fileExtension: "jpg"
+        });
+        var terrainProvider = new Cesium.CesiumTerrainProvider({
+           url: 'http://localhost:8001'
+        });
+        var extent = Cesium.Rectangle.fromDegrees(101.418675, 36.645383,101.620573, 36.437018);
+        Cesium.Camera.DEFAULT_VIEW_RECTANGLE = extent;
+        Cesium.Camera.DEFAULT_VIEW_FACTOR = 0;
+        var viewer = new Cesium.Viewer('cesiumContainer', {
+            imageryProvider: imageryProvider,
+            // terrainProvider: terrainProvider,
+            baseLayerPicker: false,
+            geocoder: false
+        });
+        var ganhe = viewer.entities.add({
+            name: 'Ganhe',
+            polygon: {
+                hierarchy: Cesium.Cartesian3.fromDegreesArray([
+                    101.518675, 36.545383,
+                    101.520573, 36.537018,
+                    101.526275, 36.538268
+                ]),
+                height: 0,
+                material: Cesium.Color.RED.withAlpha(0.5),
+                outline: true,
+                outlineColor: Cesium.Color.BLACK
+            }
+        });
+
+        viewer.zoomTo(ganhe);
+        //    var heading  = Cesium.Math.toRadians(90);
+        //    var pitch = Cesium.Math.toRadians(-80);
+        // viewer.zoomTo(wyoming, new Cesium.HeadingPitchRange(heading, pitch));
+
+        viewer.flyTo(ganhe).then(function (result) {
+            if (result) {
+                viewer.selectedEntity = ganhe;
+            }
+        });
+  </script>
+</body>
+</html>

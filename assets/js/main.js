@@ -6,7 +6,6 @@ jQuery(document).ready(function($){
 	$('.cd-close').on('click', function(){
 		triggerFilter(false);
 	});
-
 	function triggerFilter($bool) {
 		var elementsToTrigger = $([$('.cd-filter-trigger'), $('.cd-filter'), $('.cd-tab-filter'), $('.cd-gallery'), $(".leftFilter")]);
 		elementsToTrigger.each(function(){
@@ -170,8 +169,11 @@ var buttonFilter = {
 	    var self = this;
 	 
 	    // loop through each filter group and grap the active filter from each one.
+		//self.groups的数量就是有多少层查询，其中每个元素中的inputs对应每层查询各有多少个选项供选择
+		//靠"data-filter"（check1所在的字段）来创建用于filter的string
 	    for(var i = 0, group; group = self.groups[i]; i++){
 	    	group.active = [];
+	    	//开始对
 	    	group.$inputs.each(function(){
 	    		var $this = $(this);
 	    		if($this.is('input[type="radio"]') || $this.is('input[type="checkbox"]')) {
@@ -200,7 +202,8 @@ var buttonFilter = {
 	    // If the output string is empty, show all rather than none:    
 	    !self.outputString.length && (self.outputString = 'all'); 
 	
-    	// Send the output string to MixItUp via the 'filter' method:    
+    	// Send the output string to MixItUp via the 'filter' method:
+		//先检查mixItUp有没有加载好，如果加载好就传outputString给他
 		if(self.$container.mixItUp('isLoaded')){
 	    	self.$container.mixItUp('filter', self.outputString);
 		}
