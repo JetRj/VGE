@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="static1" v-bind:class="{ active: isActive, 'text-danger': hasError }"></div>
+    <div id="static2" v-bind:class="classObject"></div>
+    <div id="static3" v-bind:class="classObject3"></div>
+    <script type="text/javascript">
+        var vm1 = new Vue({
+            el: '#static1',
+            data: {
+                isActive: true,
+                hasError: true
+            }
+        });
+        var vm2 = new Vue({
+            el: '#static2',
+            data: {
+                classObject:{
+                    active: true,
+                    'text-danger': false
+                }
+            }
+        });
+        var vm3 = new Vue({
+            el: '#static3',
+            data: {
+                isActive: true,
+                error: null
+            },
+            computed: {
+                classObject3: function () {
+                    return {
+                        active: this.isActive && !this.error,
+                        'text-danger': this.error && this.error.type === 'fatal'
+                    }
+                }
+            }
+        })
+    </script>
+
+    <div id="static4" v-bind:class="[activeClass, errorClass]"></div>
+    <script>
+        var vm4 = new Vue({
+            el: '#static4',
+            data:{
+                activeClass: 'active',
+                errorClass: 'text-danger'
+            }
+        })
+    </script>
+
+    <!--How to make it run???-->
+    <script>
+        Vue.component('my-component', {
+            template: '<p class="foo bar">Hi</p>'
+        });
+    </script>
+    <my-component class="baz boo"></my-component>
+
+    <div id="static5" v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+    <script>
+        var vm5 = new Vue({
+            el: '#static5',
+            data: {
+                activeColor: 'red',
+                fontSize: 30
+            }
+        })
+    </script>
+
+
+
+
+</body>
+</html>

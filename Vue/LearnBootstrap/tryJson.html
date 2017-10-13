@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <script>
+        loadJSON(function(response) {
+            // Parse JSON string into object
+            var actual_JSON = JSON.parse(response);
+            console.log(actual_JSON);
+        });
+        function loadJSON(callback) {
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', 'data.json', true); // Replace 'my_data' with the path to your file
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                    callback(xobj.responseText);
+                }
+            };
+            xobj.send(null);
+        }
+    var array = [];
+    var id = 0;
+    array = addNewPark(array, getId(), 'name1');
+    array = addNewPark(array, getId(), 'park2');
+    var string = JSON.stringify(array);
+    console.log(string);
+
+    function addNewPark(array, parkId, parkName) {
+        var newPark = {
+            'id': parkId,
+            'name': parkName
+        };
+        newPark = addNewSite(newPark, getId(), 'name2');
+        newPark = addNewSite(newPark, getId(), 'site2');
+        array.push(newPark);
+        return array;
+    }
+
+    function addNewSite(park, siteId, siteName) {
+        var newSite = {
+            'id': siteId,
+            'name': siteName
+        };
+        newSite = addNewInstrument(newSite, getId(), 'name3');
+        newSite = addNewInstrument(newSite, getId(), 'instrument3');
+        if (park.sites === undefined) {
+            park.sites = [];
+        }
+        park.sites.push(newSite);
+        return park;
+    }
+
+    function addNewInstrument(site, instrumentId, instrumentName) {
+        var newInstrument = {
+            'id': instrumentId,
+            'name': instrumentName
+        };
+        newInstrument = addNewFactor(newInstrument, getId(), 'name4');
+        newInstrument = addNewFactor(newInstrument, getId(), 'factor4');
+        if (site.instrument === undefined) {
+            site.instrument = [];
+        }
+        site.instrument.push(newInstrument);
+        return site;
+    }
+
+    function addNewFactor(instrument, factorId, factorName) {
+        var newFactor = {
+            'id': factorId,
+            'name': factorName
+        };
+        if (instrument.factor === undefined) {
+            instrument.factor = [];
+        }
+        instrument.factor.push(newFactor);
+        return instrument;
+    }
+
+    function getId() {
+        id++;
+        return id;
+    }
+
+    </script>
+</body>
+</html>
