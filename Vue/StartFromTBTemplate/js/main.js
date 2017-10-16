@@ -131,7 +131,9 @@
         }).find('h3').css({border: 'none'})
             .end().find('span').css({color: "#f40"});
         $(this).show().css({width: '729px'});
-    }, function(){
+    },
+        //鼠标划出时的：隐藏显示代码
+        function(){
         $('.s_'+num).css({
             border: '',
             borderRight: ''
@@ -141,7 +143,6 @@
             width: 0
         }, 200).hide(200);
     });
-
 })();
 
 
